@@ -89,7 +89,7 @@ class _DatosState extends State<Datos> {
     return Scaffold(
       appBar: AppBar(
         brightness: Brightness.dark,
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: Color.fromARGB(255, 255, 244, 229),
         elevation: 0.0,
         toolbarHeight: 80,
         title: Text(
@@ -115,11 +115,16 @@ class _DatosState extends State<Datos> {
               )),
         ),
       ),
-      body: ListView(
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 255, 244, 229),
+        ),
+        child:
+      ListView(
         padding: EdgeInsets.only(right: 20, left: 20),
         children: [
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           Container(
               margin: const EdgeInsets.only(right: 10, left: 10),
@@ -127,7 +132,7 @@ class _DatosState extends State<Datos> {
               height: 120,
               child: Image.asset('assets/images/LOGOM.png')),
           SizedBox(
-            height: 40,
+            height: 20,
           ),
           Form(
               key: formKey,
@@ -208,12 +213,13 @@ class _DatosState extends State<Datos> {
             height: 20,
           ),
           Container(
-              margin: const EdgeInsets.only(right: 10, left: 10),
+              margin: const EdgeInsets.only(right: 10, left: 10, bottom: 30),
               width: 200,
               height: 120,
               child: Image.network(
                   'https://www.fusagasuga-cundinamarca.gov.co/Style%20Library/images/logo-header.png')),
         ],
+      ),
       ),
     );
   }

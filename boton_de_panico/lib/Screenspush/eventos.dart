@@ -38,36 +38,40 @@ class _EventosState extends State<Eventos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        extendBodyBehindAppBar: false,
-        appBar: AppBar(
-          brightness: Brightness.dark,
-          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-          elevation: 0.0,
-          toolbarHeight: 80,
-          title: const Text(
-            "EVENTOS",
-            style: TextStyle(
-                color: Color.fromARGB(255, 122, 68, 149),
-                fontSize: 25,
-                fontWeight: FontWeight.bold),
-          ),
-          centerTitle: true,
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30)),
-                gradient: LinearGradient(
-                  colors: [
-                    Color.fromARGB(255, 252, 156, 79),
-                    Color.fromARGB(255, 252, 156, 79),
-                  ],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.center,
-                )),
-          ),
+      extendBodyBehindAppBar: false,
+      appBar: AppBar(
+        brightness: Brightness.dark,
+        backgroundColor: Color.fromARGB(255, 255, 244, 229),
+        elevation: 0.0,
+        toolbarHeight: 80,
+        title: const Text(
+          "EVENTOS",
+          style: TextStyle(
+              color: Color.fromARGB(255, 122, 68, 149),
+              fontSize: 25,
+              fontWeight: FontWeight.bold),
         ),
-        body: ListView(
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30)),
+              gradient: LinearGradient(
+                colors: [
+                  Color.fromARGB(255, 252, 156, 79),
+                  Color.fromARGB(255, 252, 156, 79),
+                ],
+                begin: Alignment.bottomCenter,
+                end: Alignment.center,
+              )),
+        ),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 255, 244, 229),
+        ),
+        child: ListView(
           children: [
             Column(
               children: [
@@ -86,7 +90,6 @@ class _EventosState extends State<Eventos> {
                             child: Text('No se logró cargar la información'),
                           );
                         }
-
                         return Center(
                           child: CircularProgressIndicator(),
                         );
@@ -96,15 +99,17 @@ class _EventosState extends State<Eventos> {
                   height: 10,
                 ),
                 Container(
-                    margin: const EdgeInsets.only(right: 10, left: 10),
-                    width: 200,
-                    height: 120,
+                    margin: const EdgeInsets.only(right: 10, left: 10, bottom: 60),
+                    width: 300,
+                    height: 230,
                     child: Image.network(
                         'https://www.fusagasuga-cundinamarca.gov.co/Style%20Library/images/logo-header.png')),
               ],
             )
           ],
-        ));
+        ),
+      ),
+    );
   }
 
   List<Widget> listItems(List<Calendario> data, BuildContext context) {
@@ -192,7 +197,7 @@ class _EventosState extends State<Eventos> {
           // ListaImagenes(element.imagenes, context),
 
           const Divider(
-            color: Color.fromARGB(255, 255, 94, 0),
+            color: Color.fromARGB(255, 67, 211, 115),
           ),
 
           Text('Calendario de Eventos',
@@ -202,6 +207,7 @@ class _EventosState extends State<Eventos> {
             padding: const EdgeInsets.all(12.0),
             child: SizedBox(
               child: Card(
+                color: Color.fromARGB(255, 255, 229, 204),
                   elevation: 15,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10), // if you need this

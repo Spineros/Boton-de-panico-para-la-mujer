@@ -19,7 +19,7 @@ class _DerechosState extends State<Derechos> {
       extendBodyBehindAppBar: false,
       appBar: AppBar(
         brightness: Brightness.dark,
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: Color.fromARGB(255, 255, 244, 229),
         elevation: 0.0,
         toolbarHeight: 80,
         title: const Text(
@@ -45,321 +45,326 @@ class _DerechosState extends State<Derechos> {
               )),
         ),
       ),
-      body: ListView(
-        children: [
-          Container(
-            margin: const EdgeInsets.only(
-              left: 10,
-              right: 10,
-              top: 10,
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 255, 244, 229),
+        ),
+        child: ListView(
+          children: [
+            Container(
+              margin: const EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 10,
+              ),
+              color: Color.fromARGB(255, 255, 244, 229),
+              width: 100,
+              height: 100,
+              child: Text(
+                "El acuerdo 13 del 2010 contiene la politica publica de mujer y género del municipío. en ella se priorizan los siquientes derechos:",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Color.fromARGB(255, 178, 112, 162),
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
-            color: Color.fromARGB(255, 255, 255, 255),
-            width: 100,
-            height: 100,
-            child: Text(
-              "El acuerdo 13 del 2010 contiene la politica publica de mujer y género del municipío. en ella se priorizan los siquientes derechos:",
-              style: TextStyle(
-                fontSize: 20,
-                color: Color.fromARGB(255, 178, 112, 162),
-              ),
-              textAlign: TextAlign.center,
+            Row(
+              children: [
+                Container(
+                  width: 170,
+                  height: 100,
+                  margin: EdgeInsets.only(
+                    right: 0,
+                    left: 10,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                    image: new DecorationImage(
+                      image: new AssetImage(
+                          'assets/images/APPMUJERES/DERECHOS/TRABAJO-01.png'),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 200,
+                  height: 100,
+                  margin: const EdgeInsets.only(
+                    left: 0,
+                    right: 10,
+                    top: 0,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                  ),
+                  child: Text(
+                    "                          Derecho a un trabajo digno y autonomía económica",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 178, 112, 162),
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              ],
             ),
-          ),
-          Row(
-            children: [
-              Container(
-                width: 170,
-                height: 100,
-                margin: EdgeInsets.only(
-                  right: 0,
-                  left: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                  image: new DecorationImage(
-                    image: new AssetImage(
-                        'assets/images/APPMUJERES/DERECHOS/TRABAJO-01.png'),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 200,
+                  height: 100,
+                  margin: const EdgeInsets.only(
+                    left: 10,
+                    right: 0,
+                    top: 0,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                  ),
+                  child: Text(
+                    "Derecho de la salud y a la salud sexual y reproductiva libre e informada",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 178, 112, 162),
+                    ),
+                    textAlign: TextAlign.left,
                   ),
                 ),
-              ),
-              Container(
-                width: 200,
-                height: 100,
-                margin: const EdgeInsets.only(
-                  left: 0,
-                  right: 10,
-                  top: 0,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                ),
-                child: Text(
-                  "                          Derecho a un trabajo digno y autonomía económica",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color.fromARGB(255, 178, 112, 162),
+                Container(
+                  width: 170,
+                  height: 100,
+                  margin: EdgeInsets.only(
+                    right: 10,
+                    left: 0,
                   ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              Container(
-                width: 200,
-                height: 100,
-                margin: const EdgeInsets.only(
-                  left: 10,
-                  right: 0,
-                  top: 0,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                ),
-                child: Text(
-                  "Derecho de la salud y a la salud sexual y reproductiva libre e informada",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color.fromARGB(255, 178, 112, 162),
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-              Container(
-                width: 170,
-                height: 100,
-                margin: EdgeInsets.only(
-                  right: 10,
-                  left: 0,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                  image: new DecorationImage(
-                    image: new AssetImage(
-                        'assets/images/APPMUJERES/DERECHOS/SALUD-02.png'),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                    image: new DecorationImage(
+                      image: new AssetImage(
+                          'assets/images/APPMUJERES/DERECHOS/SALUD-02.png'),
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              Container(
-                width: 170,
-                height: 100,
-                margin: EdgeInsets.only(
-                  right: 0,
-                  left: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                  image: new DecorationImage(
-                    image: new AssetImage(
-                        'assets/images/APPMUJERES/DERECHOS/EDUCACION-03.png'),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 170,
+                  height: 100,
+                  margin: EdgeInsets.only(
+                    right: 0,
+                    left: 10,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                    image: new DecorationImage(
+                      image: new AssetImage(
+                          'assets/images/APPMUJERES/DERECHOS/EDUCACION-03.png'),
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                width: 200,
-                height: 100,
-                margin: const EdgeInsets.only(
-                  left: 0,
-                  right: 10,
-                  top: 0,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                ),
-                child: Text(
-                  "\nDerecho a una educación equitativa",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color.fromARGB(255, 178, 112, 162),
+                Container(
+                  width: 200,
+                  height: 100,
+                  margin: const EdgeInsets.only(
+                    left: 0,
+                    right: 10,
+                    top: 0,
                   ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              Container(
-                width: 200,
-                height: 100,
-                margin: const EdgeInsets.only(
-                  left: 10,
-                  right: 0,
-                  top: 0,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                ),
-                child: Text(
-                  "\nDerecho a una cultura transformadora y libre de sexismo",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color.fromARGB(255, 178, 112, 162),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
                   ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-              Container(
-                width: 170,
-                height: 100,
-                margin: EdgeInsets.only(
-                  right: 10,
-                  left: 0,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                  image: new DecorationImage(
-                    image: new AssetImage(
-                        'assets/images/APPMUJERES/DERECHOS/VIOLENCIA-04.png'),
+                  child: Text(
+                    "\nDerecho a una educación equitativa",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 178, 112, 162),
+                    ),
+                    textAlign: TextAlign.left,
                   ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              Container(
-                width: 170,
-                height: 100,
-                margin: EdgeInsets.only(
-                  right: 0,
-                  left: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                  image: new DecorationImage(
-                    image: new AssetImage(
-                        'assets/images/APPMUJERES/DERECHOS/CULTURA-07.png'),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 200,
+                  height: 100,
+                  margin: const EdgeInsets.only(
+                    left: 10,
+                    right: 0,
+                    top: 0,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                  ),
+                  child: Text(
+                    "\nDerecho a una cultura transformadora y libre de sexismo",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 178, 112, 162),
+                    ),
+                    textAlign: TextAlign.left,
                   ),
                 ),
-              ),
-              Container(
-                width: 200,
-                height: 100,
-                margin: const EdgeInsets.only(
-                  left: 0,
-                  right: 10,
-                  top: 0,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                ),
-                child: Text(
-                  "Derecho a una vida libre de violencias para todas las mujeres",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color.fromARGB(255, 178, 112, 162),
+                Container(
+                  width: 170,
+                  height: 100,
+                  margin: EdgeInsets.only(
+                    right: 10,
+                    left: 0,
                   ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              Container(
-                width: 200,
-                height: 100,
-                margin: const EdgeInsets.only(
-                  left: 10,
-                  right: 0,
-                  top: 0,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                ),
-                child: Text(
-                  "Derecho a viviendas dignas y un hábitat saludable para las mujeres",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color.fromARGB(255, 178, 112, 162),
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-              Container(
-                width: 170,
-                height: 100,
-                margin: EdgeInsets.only(
-                  right: 10,
-                  left: 0,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                  image: new DecorationImage(
-                    image: new AssetImage(
-                        'assets/images/APPMUJERES/DERECHOS/HOGAR-06.png'),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                    image: new DecorationImage(
+                      image: new AssetImage(
+                          'assets/images/APPMUJERES/DERECHOS/VIOLENCIA-04.png'),
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Row(
-            children: [
-              Container(
-                width: 170,
-                height: 100,
-                margin: EdgeInsets.only(
-                  right: 0,
-                  left: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                  image: new DecorationImage(
-                    image: new AssetImage(
-                        'assets/images/APPMUJERES/DERECHOS/POLITICA-05.png'),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 170,
+                  height: 100,
+                  margin: EdgeInsets.only(
+                    right: 0,
+                    left: 10,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                    image: new DecorationImage(
+                      image: new AssetImage(
+                          'assets/images/APPMUJERES/DERECHOS/CULTURA-07.png'),
+                    ),
                   ),
                 ),
-              ),
-              Container(
-                width: 200,
-                height: 100,
-                margin: const EdgeInsets.only(
-                  left: 0,
-                  right: 10,
-                  top: 0,
-                ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 229, 204),
-                ),
-                child: Text(
-                  "Derecho a la participación politica y representación de las mujeres",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color.fromARGB(255, 178, 112, 162),
+                Container(
+                  width: 200,
+                  height: 100,
+                  margin: const EdgeInsets.only(
+                    left: 0,
+                    right: 10,
+                    top: 0,
                   ),
-                  textAlign: TextAlign.left,
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                  ),
+                  child: Text(
+                    "Derecho a una vida libre de violencias para todas las mujeres",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 178, 112, 162),
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
-        ],
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 200,
+                  height: 100,
+                  margin: const EdgeInsets.only(
+                    left: 10,
+                    right: 0,
+                    top: 0,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                  ),
+                  child: Text(
+                    "Derecho a viviendas dignas y un hábitat saludable para las mujeres",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 178, 112, 162),
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+                Container(
+                  width: 170,
+                  height: 100,
+                  margin: EdgeInsets.only(
+                    right: 10,
+                    left: 0,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                    image: new DecorationImage(
+                      image: new AssetImage(
+                          'assets/images/APPMUJERES/DERECHOS/HOGAR-06.png'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                Container(
+                  width: 170,
+                  height: 100,
+                  margin: EdgeInsets.only(
+                    right: 0,
+                    left: 10,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                    image: new DecorationImage(
+                      image: new AssetImage(
+                          'assets/images/APPMUJERES/DERECHOS/POLITICA-05.png'),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 200,
+                  height: 100,
+                  margin: const EdgeInsets.only(
+                    left: 0,
+                    right: 10,
+                    top: 0,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 229, 204),
+                  ),
+                  child: Text(
+                    "Derecho a la participación politica y representación de las mujeres",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 178, 112, 162),
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+          ],
+        ),
       ),
     );
   }

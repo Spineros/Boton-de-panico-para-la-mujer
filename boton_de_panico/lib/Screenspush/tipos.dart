@@ -19,7 +19,7 @@ class _TiposState extends State<Tipos> {
       extendBodyBehindAppBar: false,
       appBar: AppBar(
         brightness: Brightness.dark,
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: Color.fromARGB(255, 255, 244, 229),
         elevation: 0.0,
         toolbarHeight: 80,
         title: const Text(
@@ -45,7 +45,12 @@ class _TiposState extends State<Tipos> {
               )),
         ),
       ),
-      body: ListView(
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 255, 244, 229),
+        ),
+        child: 
+      ListView(
         children: [
           Container(
             margin: const EdgeInsets.only(
@@ -53,7 +58,7 @@ class _TiposState extends State<Tipos> {
               right: 10,
               top: 10,
             ),
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: Color.fromARGB(255, 255, 244, 229),
             width: 100,
             height: 100,
             child: Text(
@@ -273,6 +278,7 @@ class _TiposState extends State<Tipos> {
             ],
           ),
         ],
+      ),
       ),
     );
   }

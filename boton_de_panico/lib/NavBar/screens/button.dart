@@ -44,7 +44,7 @@ class _ButtonpageState extends State<ButtonContent> {
 
   String location = 'Null, Press Button';
   // ignore: non_constant_identifier_names
-  String Address = 'search';
+  var Address;
   Future<Position> _getGeoLocationPosition() async {
     bool serviceEnabled;
     LocationPermission permission;
@@ -80,16 +80,6 @@ class _ButtonpageState extends State<ButtonContent> {
         desiredAccuracy: LocationAccuracy.high);
   }
 
-  Future<void> GetAddressFromLatLong(Position position) async {
-    List<Placemark> placemarks =
-        await placemarkFromCoordinates(position.latitude, position.longitude);
-    print(placemarks);
-    Placemark place = placemarks[0];
-    Address =
-        '${place.street}, ${place.subLocality}, ${place.locality}, ${place.postalCode}, ${place.country}';
-    setState(() {});
-  }
-
   @override
   void initState() {
     getUser();
@@ -102,7 +92,7 @@ class _ButtonpageState extends State<ButtonContent> {
       extendBodyBehindAppBar: false,
       appBar: AppBar(
         brightness: Brightness.dark,
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: Color.fromARGB(255, 255, 244, 229),
         elevation: 0.0,
         toolbarHeight: 80,
         title: const Text(
@@ -128,134 +118,152 @@ class _ButtonpageState extends State<ButtonContent> {
               )),
         ),
       ),
-      body: ListView(
-        children: [
-          Container(
-            decoration:
-                const BoxDecoration(color: Color.fromARGB(255, 255, 255, 255)),
-            child: Center(
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  const Text(
-                    'Utilizar solo en caso de emergencia',
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 178, 112, 162),
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  ElevatedButton(
-                    child: const Text('AYUDA!!!!'),
-                    onPressed: () async {
-                      showDialog(
-                          context: context,
-                          builder: (_) {
-                            return AlertDialog(
-                              backgroundColor:
-                                  Color.fromARGB(255, 228, 180, 135),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16.0),
-                              ),
-                              title: const Text("¿NECESITAS AYUDA?"),
-                              titleTextStyle: const TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
-                              content: const Text(
-                                  "CONFIRMA LA ALERTA PARA ENVIAR TU UBICACIÓN ACTUAL"),
-                              contentTextStyle: const TextStyle(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
-                              actions: [
-                                TextButton(
-                                  onPressed: () async {
-                                    Navigator.of(
-                                      context,
-                                      rootNavigator: true,
-                                    ).pop(
-                                      context,
-                                    );
-                                    Position position =
-                                        await _getGeoLocationPosition();
-                                    location =
-                                        'Lat: ${position.latitude} , Long: ${position.longitude}';
-                                    GetAddressFromLatLong(position);
-                                    // ignore: use_build_context_synchronously
-                                    PostProvider().registro(
-                                        Address, location, user_id, context);
-                                  },
-                                  child: const Text("Confirmar",
-                                      style: TextStyle(color: Colors.white)),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 255, 244, 229),
+        ),
+        child: ListView(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 255, 244, 229)),
+              child: Center(
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      'Utilizar solo en caso de emergencia',
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 178, 112, 162),
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    ElevatedButton(
+                      child: const Text('AYUDA!!!!'),
+                      onPressed: () async {
+                        showDialog(
+                            context: context,
+                            builder: (_) {
+                              return AlertDialog(
+                                backgroundColor:
+                                    Color.fromARGB(255, 228, 180, 135),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.0),
                                 ),
-                                TextButton(
-                                    onPressed: () {
+                                title: const Text("¿NECESITAS AYUDA?"),
+                                titleTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                                content: const Text(
+                                    "CONFIRMA LA ALERTA PARA ENVIAR TU UBICACIÓN ACTUAL"),
+                                contentTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () async {
                                       Navigator.of(
                                         context,
                                         rootNavigator: true,
                                       ).pop(
                                         context,
                                       );
+                                      Position position =
+                                          await _getGeoLocationPosition();
+                                      location =
+                                          'Lat: ${position.latitude} , Long: ${position.longitude}';
+                                      List<Placemark> placemarks =
+                                          await placemarkFromCoordinates(
+                                              position.latitude,
+                                              position.longitude);
+                                      print(placemarks);
+                                      Placemark place = placemarks[0];
+                                      Address =
+                                          '${place.street}, ${place.subLocality}, ${place.locality}, ${place.postalCode}, ${place.country}';
+                                      setState(() {});
+                                      // ignore: use_build_context_synchronously
+                                      PostProvider().registro(
+                                          Address.toString(),
+                                          location,
+                                          user_id,
+                                          context);
                                     },
-                                    child: const Text("Cancelar",
-                                        style: TextStyle(color: Colors.white))),
-                              ],
-                            );
-                          });
-                    },
-                    style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(230, 100),
-                      foregroundColor: const Color.fromARGB(255, 252, 219, 249),
-                      backgroundColor: Color.fromARGB(255, 142, 76, 168),
-                      shadowColor: const Color.fromARGB(255, 85, 25, 75),
-                      elevation: 10,
-                      textStyle: const TextStyle(
-                          fontSize: 40, fontWeight: FontWeight.bold),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
+                                    child: const Text("Confirmar",
+                                        style: TextStyle(color: Colors.white)),
+                                  ),
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.of(
+                                          context,
+                                          rootNavigator: true,
+                                        ).pop(
+                                          context,
+                                        );
+                                      },
+                                      child: const Text("Cancelar",
+                                          style:
+                                              TextStyle(color: Colors.white))),
+                                ],
+                              );
+                            });
+                      },
+                      style: ElevatedButton.styleFrom(
+                        fixedSize: const Size(230, 100),
+                        foregroundColor:
+                            const Color.fromARGB(255, 252, 219, 249),
+                        backgroundColor: Color.fromARGB(255, 142, 76, 168),
+                        shadowColor: const Color.fromARGB(255, 85, 25, 75),
+                        elevation: 10,
+                        textStyle: const TextStyle(
+                            fontSize: 40, fontWeight: FontWeight.bold),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    width: 250,
-                    height: 250,
-                    color: Color.fromARGB(255, 255, 232, 210),
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        autoPlay: true,
-                        aspectRatio: 0.8,
-                        enlargeCenterPage: true,
-                      ),
-                      items: [
-                        Image.asset('assets/images/vio1.jpeg'),
-                        Image.asset('assets/images/vio2.jpeg'),
-                        Image.asset('assets/images/linea.jpg'),
-                      ],
+                    const SizedBox(
+                      height: 10,
                     ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Container(
-                      margin: const EdgeInsets.only(right: 10, left: 10),
-                      width: 300,
-                      height: 230,
-                      child: Image.network(
-                          'https://www.fusagasuga-cundinamarca.gov.co/Style%20Library/images/logo-header.png')),
-                ],
+                    Container(
+                      width: 250,
+                      height: 250,
+                      color: Color.fromARGB(255, 255, 232, 210),
+                      child: CarouselSlider(
+                        options: CarouselOptions(
+                          autoPlay: true,
+                          aspectRatio: 0.8,
+                          enlargeCenterPage: true,
+                        ),
+                        items: [
+                          Image.asset('assets/images/vio1.jpeg'),
+                          Image.asset('assets/images/vio2.jpeg'),
+                          Image.asset('assets/images/linea.jpg'),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Container(
+                        margin: const EdgeInsets.only(right: 10, left: 10),
+                        width: 300,
+                        height: 230,
+                        child: Image.network(
+                            'https://www.fusagasuga-cundinamarca.gov.co/Style%20Library/images/logo-header.png')),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

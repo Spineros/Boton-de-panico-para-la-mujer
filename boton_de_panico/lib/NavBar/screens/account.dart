@@ -214,7 +214,7 @@ class _AccountContentState extends State<AccountContent> {
     return Scaffold(
       appBar: AppBar(
         brightness: Brightness.dark,
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: Color.fromARGB(255, 255, 244, 229),
         elevation: 0.0,
         toolbarHeight: 80,
         title: Text(
@@ -240,55 +240,60 @@ class _AccountContentState extends State<AccountContent> {
               )),
         ),
       ),
-      body: ListView(
-        padding: EdgeInsets.only(right: 20, left: 20),
-        children: [
-          const SizedBox(
-            height: 30,
-          ),
-          Container(
-              margin: const EdgeInsets.only(right: 10, left: 10),
-              width: 200,
-              height: 120,
-              child: Image.asset('assets/images/LOGOM.png')),
-          SizedBox(
-            height: 40,
-          ),
-          profilename(),
-          const SizedBox(
-            height: 30,
-          ),
-          profileemail(),
-          const SizedBox(
-            height: 20,
-          ),
-          profilephone(),
-          const SizedBox(
-            height: 20,
-          ),
-          profiletipod(),
-          const SizedBox(
-            height: 20,
-          ),
-          profiledocumento(),
-          const SizedBox(
-            height: 20,
-          ),
-          profilesexo(),
-          const SizedBox(
-            height: 20,
-          ),
-          profilepoblacion(),
-          const SizedBox(
-            height: 20,
-          ),
-          Container(
-              margin: const EdgeInsets.only(right: 10, left: 10),
-              width: 200,
-              height: 120,
-              child: Image.network(
-                  'https://www.fusagasuga-cundinamarca.gov.co/Style%20Library/images/logo-header.png')),
-        ],
+      body: Container(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 255, 244, 229),
+        ),
+        child: ListView(
+          padding: EdgeInsets.only(right: 20, left: 20),
+          children: [
+            const SizedBox(
+              height: 30,
+            ),
+            Container(
+                margin: const EdgeInsets.only(right: 10, left: 10),
+                width: 200,
+                height: 120,
+                child: Image.asset('assets/images/LOGOM.png')),
+            SizedBox(
+              height: 20,
+            ),
+            profilename(),
+            const SizedBox(
+              height: 20,
+            ),
+            profileemail(),
+            const SizedBox(
+              height: 20,
+            ),
+            profilephone(),
+            const SizedBox(
+              height: 20,
+            ),
+            profiletipod(),
+            const SizedBox(
+              height: 20,
+            ),
+            profiledocumento(),
+            const SizedBox(
+              height: 20,
+            ),
+            profilesexo(),
+            const SizedBox(
+              height: 20,
+            ),
+            profilepoblacion(),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+                margin: const EdgeInsets.only(right: 10, left: 10, bottom: 60),
+                width: 200,
+                height: 120,
+                child: Image.network(
+                    'https://www.fusagasuga-cundinamarca.gov.co/Style%20Library/images/logo-header.png')),
+          ],
+        ),
       ),
     );
   }
