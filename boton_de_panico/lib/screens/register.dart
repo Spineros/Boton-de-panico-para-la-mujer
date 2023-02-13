@@ -175,6 +175,7 @@ class _registerState extends State<Register> {
           //name textfield
           Container(
             child: TextField(
+              keyboardType: TextInputType.number,
               controller: documento,
               obscureText: isPassword,
               decoration: InputDecoration(

@@ -4,9 +4,8 @@ import 'package:boton_de_panico/screens/ruta.dart';
 import 'package:expandable_text/expandable_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:boton_de_panico/services/calendario_service.dart';
-import 'package:flutter/services.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-
+import 'package:boton_de_panico/constant.dart';
 // import 'package:boton_de_panico/provider/BotonProvider.dart';
 
 class Eventos extends StatefulWidget {
@@ -96,11 +95,11 @@ class _EventosState extends State<Eventos> {
                       },
                     )),
                 SizedBox(
-                  height: 10,
+                  height: 0,
                 ),
                 Container(
                     margin:
-                        const EdgeInsets.only(right: 10, left: 10, bottom: 60),
+                        const EdgeInsets.only(right: 10, left: 10, bottom: 30),
                     width: 300,
                     height: 230,
                     child: Image.network(
@@ -129,14 +128,14 @@ class _EventosState extends State<Eventos> {
               children: [
                 Expanded(
                   child: ExpandableText(
-                    element.titulo,
+                    element.titulo.toUpperCase(),
                     expandText: 'Ver más',
                     collapseText: 'Ver menos',
                     maxLines: 2,
                     linkColor: Color.fromARGB(255, 243, 135, 33),
                     style: const TextStyle(
                         color: Color.fromARGB(255, 85, 40, 122),
-                        fontWeight: FontWeight.bold),
+                        fontWeight: FontWeight.bold, fontSize: 15),
                   ),
                 ),
 
@@ -157,8 +156,8 @@ class _EventosState extends State<Eventos> {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        Icon(Icons.navigation_rounded),
-                        Text('Ir a Fusagasugá')
+                        Icon(Icons.navigation_rounded,color: Color.fromARGB(255, 67, 211, 115),),
+                        Text('Ir al evento',style: TextStyle(color: Color.fromARGB(255, 67, 211, 115)),)
                       ]),
                   onPressed: () {
                     Navigator.push(
@@ -186,8 +185,9 @@ class _EventosState extends State<Eventos> {
                       height: 300,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: CachedNetworkImageProvider(element.multimedia,
-                              scale: 1.0),
+                          image: CachedNetworkImageProvider(
+                              eventosURL + element.multimedia,
+                              scale: 0.5),
                         ),
                       ),
                     ),
@@ -201,8 +201,8 @@ class _EventosState extends State<Eventos> {
             color: Color.fromARGB(255, 67, 211, 115),
           ),
 
-          Text('Calendario de Eventos',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0)),
+          Text('Descripción del Evento'.toUpperCase(),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13.0)),
 
           Padding(
             padding: const EdgeInsets.all(12.0),
@@ -219,7 +219,7 @@ class _EventosState extends State<Eventos> {
                       element.descripcion,
                       expandText: 'Ver más',
                       collapseText: 'Ver menos',
-                      maxLines: 7,
+                      maxLines: 10,
                       linkColor: Color.fromARGB(255, 60, 202, 103),
                       textAlign: TextAlign.justify,
                     ),
