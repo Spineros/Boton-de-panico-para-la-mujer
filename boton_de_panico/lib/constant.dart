@@ -1,7 +1,7 @@
 // ----- STRINGS ------
 import 'package:flutter/material.dart';
 
-const baseURL = 'http://10.0.0.40:8000/api';
+const baseURL = 'http://172.17.180.89:8000/api';
 // const baseURL = 'http://172.17.100.15:8000/api';
 const loginURL = baseURL + '/login';
 const registerURL = baseURL + '/register';
@@ -9,7 +9,7 @@ const logoutURL = baseURL + '/logout';
 const userURL = baseURL + '/user';
 const postsURL = baseURL + '/registros';
 const calendarioURL = baseURL + '/show';
-const olvidoURL = 'http://10.0.0.40:8000/forgot-password';
+const olvidoURL = 'http://172.17.180.89:8000/forgot-password';
 
 // ----- Errors -----
 const serverError = 'Server error';

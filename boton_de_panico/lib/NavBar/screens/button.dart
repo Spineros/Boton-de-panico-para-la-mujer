@@ -152,7 +152,7 @@ class _ButtonpageState extends State<ButtonContent> {
                             builder: (_) {
                               return AlertDialog(
                                 backgroundColor:
-                                    Color.fromARGB(255, 228, 180, 135),
+                                    Color.fromARGB(255, 250, 182, 127),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
@@ -235,7 +235,7 @@ class _ButtonpageState extends State<ButtonContent> {
                     Container(
                       width: 250,
                       height: 250,
-                      color: Color.fromARGB(255, 255, 232, 210),
+                      color: Color.fromARGB(255, 250, 182, 127),
                       child: CarouselSlider(
                         options: CarouselOptions(
                           autoPlay: true,

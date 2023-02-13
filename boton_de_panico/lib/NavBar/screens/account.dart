@@ -105,24 +105,24 @@ class _AccountContentState extends State<AccountContent> {
             fontWeight: FontWeight.w500),
       ));
 
-  Widget profiletipod() => Container(
-      width: 100,
-      height: 50,
-      decoration: BoxDecoration(
-        color: Color.fromARGB(255, 209, 193, 228),
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(10),
-            topRight: Radius.circular(10),
-            bottomLeft: Radius.circular(10),
-            bottomRight: Radius.circular(10)),
-      ),
-      child: Text(
-        'Tipo de documento: $user_tipodocumento',
-        style: TextStyle(
-            color: Color.fromARGB(255, 255, 225, 191),
-            fontSize: 22,
-            fontWeight: FontWeight.w500),
-      ));
+  // Widget profiletipod() => Container(
+  //     width: 100,
+  //     height: 50,
+  //     decoration: BoxDecoration(
+  //       color: Color.fromARGB(255, 209, 193, 228),
+  //       borderRadius: BorderRadius.only(
+  //           topLeft: Radius.circular(10),
+  //           topRight: Radius.circular(10),
+  //           bottomLeft: Radius.circular(10),
+  //           bottomRight: Radius.circular(10)),
+  //     ),
+  //     child: Text(
+  //       'Tipo de documento: $user_tipodocumento',
+  //       style: TextStyle(
+  //           color: Color.fromARGB(255, 255, 225, 191),
+  //           fontSize: 22,
+  //           fontWeight: FontWeight.w500),
+  //     ));
 
   Widget profiledocumento() => Container(
       width: 100,
@@ -136,7 +136,7 @@ class _AccountContentState extends State<AccountContent> {
             bottomRight: Radius.circular(10)),
       ),
       child: Text(
-        'Documento: $user_documento',
+        ' $user_tipodocumento: $user_documento',
         style: TextStyle(
             color: Color.fromARGB(255, 255, 225, 191),
             fontSize: 22,
@@ -270,10 +270,10 @@ class _AccountContentState extends State<AccountContent> {
             const SizedBox(
               height: 20,
             ),
-            profiletipod(),
-            const SizedBox(
-              height: 20,
-            ),
+            // profiletipod(),
+            // const SizedBox(
+            //   height: 20,
+            // ),
             profiledocumento(),
             const SizedBox(
               height: 20,

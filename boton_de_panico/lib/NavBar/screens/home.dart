@@ -63,7 +63,7 @@ class _HomepageState extends State<HomeContent> {
                 right: 10,
                 top: 10,
               ),
-              color: Color.fromARGB(255, 255, 229, 204),
+              color: Color.fromARGB(255, 250, 182, 127),
               width: 100,
               height: 50,
               child: Text(
@@ -93,7 +93,7 @@ class _HomepageState extends State<HomeContent> {
                 right: 10,
                 top: 10,
               ),
-              color: Color.fromARGB(255, 255, 229, 204),
+              color: Color.fromARGB(255, 250, 182, 127),
               width: 200,
               height: 150,
               child: InkWell(
@@ -124,7 +124,7 @@ class _HomepageState extends State<HomeContent> {
                 right: 10,
                 top: 10,
               ),
-              color: Color.fromARGB(255, 255, 229, 204),
+              color: Color.fromARGB(255, 250, 182, 127),
               width: 200,
               height: 150,
               child: InkWell(
@@ -156,7 +156,7 @@ class _HomepageState extends State<HomeContent> {
                 right: 10,
                 top: 10,
               ),
-              color: Color.fromARGB(255, 255, 229, 204),
+              color: Color.fromARGB(255, 250, 182, 127),
               width: 200,
               height: 150,
               child: InkWell(

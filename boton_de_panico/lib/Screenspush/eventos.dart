@@ -99,7 +99,8 @@ class _EventosState extends State<Eventos> {
                   height: 10,
                 ),
                 Container(
-                    margin: const EdgeInsets.only(right: 10, left: 10, bottom: 60),
+                    margin:
+                        const EdgeInsets.only(right: 10, left: 10, bottom: 60),
                     width: 300,
                     height: 230,
                     child: Image.network(
@@ -207,7 +208,7 @@ class _EventosState extends State<Eventos> {
             padding: const EdgeInsets.all(12.0),
             child: SizedBox(
               child: Card(
-                color: Color.fromARGB(255, 255, 229, 204),
+                  color: Color.fromARGB(255, 250, 182, 127),
                   elevation: 15,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10), // if you need this

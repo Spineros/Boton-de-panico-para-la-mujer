@@ -73,6 +73,7 @@ class _registerState extends State<Register> {
           //name textfield
           Container(
             child: TextField(
+              keyboardType: TextInputType.emailAddress,
               controller: email,
               obscureText: isPassword,
               decoration: InputDecoration(

@@ -79,7 +79,7 @@ class _DerechosState extends State<Derechos> {
                     left: 10,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                     image: new DecorationImage(
                       image: new AssetImage(
                           'assets/images/APPMUJERES/DERECHOS/TRABAJO-01.png'),
@@ -95,7 +95,7 @@ class _DerechosState extends State<Derechos> {
                     top: 0,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                   ),
                   child: Text(
                     "                          Derecho a un trabajo digno y autonomía económica",
@@ -122,7 +122,7 @@ class _DerechosState extends State<Derechos> {
                     top: 0,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                   ),
                   child: Text(
                     "Derecho de la salud y a la salud sexual y reproductiva libre e informada",
@@ -141,7 +141,7 @@ class _DerechosState extends State<Derechos> {
                     left: 0,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                     image: new DecorationImage(
                       image: new AssetImage(
                           'assets/images/APPMUJERES/DERECHOS/SALUD-02.png'),
@@ -163,7 +163,7 @@ class _DerechosState extends State<Derechos> {
                     left: 10,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                     image: new DecorationImage(
                       image: new AssetImage(
                           'assets/images/APPMUJERES/DERECHOS/EDUCACION-03.png'),
@@ -179,7 +179,7 @@ class _DerechosState extends State<Derechos> {
                     top: 0,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                   ),
                   child: Text(
                     "\nDerecho a una educación equitativa",
@@ -206,7 +206,7 @@ class _DerechosState extends State<Derechos> {
                     top: 0,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                   ),
                   child: Text(
                     "\nDerecho a una cultura transformadora y libre de sexismo",
@@ -225,7 +225,7 @@ class _DerechosState extends State<Derechos> {
                     left: 0,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                     image: new DecorationImage(
                       image: new AssetImage(
                           'assets/images/APPMUJERES/DERECHOS/VIOLENCIA-04.png'),
@@ -247,7 +247,7 @@ class _DerechosState extends State<Derechos> {
                     left: 10,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                     image: new DecorationImage(
                       image: new AssetImage(
                           'assets/images/APPMUJERES/DERECHOS/CULTURA-07.png'),
@@ -263,7 +263,7 @@ class _DerechosState extends State<Derechos> {
                     top: 0,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                   ),
                   child: Text(
                     "Derecho a una vida libre de violencias para todas las mujeres",
@@ -290,7 +290,7 @@ class _DerechosState extends State<Derechos> {
                     top: 0,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                   ),
                   child: Text(
                     "Derecho a viviendas dignas y un hábitat saludable para las mujeres",
@@ -309,7 +309,7 @@ class _DerechosState extends State<Derechos> {
                     left: 0,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                     image: new DecorationImage(
                       image: new AssetImage(
                           'assets/images/APPMUJERES/DERECHOS/HOGAR-06.png'),
@@ -331,7 +331,7 @@ class _DerechosState extends State<Derechos> {
                     left: 10,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                     image: new DecorationImage(
                       image: new AssetImage(
                           'assets/images/APPMUJERES/DERECHOS/POLITICA-05.png'),
@@ -347,7 +347,7 @@ class _DerechosState extends State<Derechos> {
                     top: 0,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 229, 204),
+                    color: Color.fromARGB(255, 250, 182, 127),
                   ),
                   child: Text(
                     "Derecho a la participación politica y representación de las mujeres",
