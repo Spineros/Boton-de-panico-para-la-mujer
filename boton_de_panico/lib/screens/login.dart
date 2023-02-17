@@ -1,12 +1,10 @@
 import 'package:boton_de_panico/NavBar/fluid_nav_bar.dart';
-import 'package:boton_de_panico/NavBar/screens/home.dart';
 import 'package:boton_de_panico/models/api_response.dart';
 import 'package:boton_de_panico/models/user.dart';
 import 'package:boton_de_panico/services/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.Dart';
-import 'package:flutter/services.dart';
 
 import '../constant.dart';
 import 'register.dart';

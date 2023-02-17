@@ -1,12 +1,9 @@
-import 'dart:convert';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:boton_de_panico/NavBar/screens/home.dart';
 import 'package:boton_de_panico/screens/login.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:boton_de_panico/services/AuthProvider.dart';
-import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.Dart';
+import 'package:boton_de_panico/constant.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -27,6 +24,20 @@ class _registerState extends State<Register> {
   final TextEditingController confirmpassword = new TextEditingController();
   final TextEditingController countryCode = new TextEditingController();
   var updatedPhone;
+
+  final Uri toLaunch = Uri.parse(
+      'http://fusagasuga-cundinamarca.gov.co/Paginas/Politicas-de-Privacidad-y-Condiciones-de-Uso.aspx');
+
+  Future<void>? _launched;
+
+  Future<void> _launchInBrowser(Uri url) async {
+    if (!await launchUrl(
+      url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw Exception('Could not launch $url');
+    }
+  }
 
   Widget _entryNameField(String title, {bool isPassword = false}) {
     return Container(
@@ -343,27 +354,91 @@ class _registerState extends State<Register> {
               ])),
       child: Column(
         children: [
-          TextButton(
-            onPressed: () {
-              AuthProvider().register(
-                  name.text,
-                  email.text,
-                  updatedPhone,
-                  dropdownValue.toString(),
-                  documento.text,
-                  dropdownValu.toString(),
-                  dropdownVal.toString(),
-                  password.text,
-                  confirmpassword.text,
-                  'BD',
-                  context);
+          ElevatedButton(
+            child: const Text('REGISTRAR'),
+            onPressed: () async {
+              showDialog(
+                  context: context,
+                  builder: (_) {
+                    return AlertDialog(
+                      backgroundColor: Color.fromARGB(255, 250, 201, 127),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      title: const Text("PRIVACIDAD"),
+                      titleTextStyle: const TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                      content: const Text(
+                          "ACEPTAS LOS TERMINOS Y POLITICAS DE PRIVACIDAD"),
+                      contentTextStyle: const TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              AuthProvider().register(
+                                  name.text,
+                                  email.text,
+                                  updatedPhone,
+                                  dropdownValue.toString(),
+                                  documento.text,
+                                  dropdownValu.toString(),
+                                  dropdownVal.toString(),
+                                  password.text,
+                                  confirmpassword.text,
+                                  'BD',
+                                  context);
+                              Navigator.of(
+                                context,
+                                rootNavigator: true,
+                              ).pop(
+                                context,
+                              );
+                            },
+                            child: const Text("Aceptar",
+                                style: TextStyle(color: Colors.white))),
+                        TextButton(
+                            onPressed: () {
+                              _launched = _launchInBrowser(toLaunch);
+                              Navigator.of(
+                                context,
+                                rootNavigator: true,
+                              ).pop(
+                                context,
+                              );
+                            },
+                            child: const Text("ver políticas de privacidad",
+                                style: TextStyle(color: Colors.white))),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.of(
+                                context,
+                                rootNavigator: true,
+                              ).pop(
+                                context,
+                              );
+                            },
+                            child: const Text("Cancelar",
+                                style: TextStyle(color: Colors.white))),
+                      ],
+                    );
+                  });
             },
-            child: Text(
-              'CREAR',
-              style: TextStyle(
-                  fontSize: 20, color: Color.fromARGB(255, 252, 219, 249)),
+            style: ElevatedButton.styleFrom(
+              fixedSize: const Size(400, 60),
+              foregroundColor: const Color.fromARGB(255, 252, 219, 249),
+              backgroundColor: Color.fromARGB(255, 147, 83, 231),
+              elevation: 0,
+              textStyle:
+                  const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
             ),
-          )
+          ),
         ],
       ),
     );
