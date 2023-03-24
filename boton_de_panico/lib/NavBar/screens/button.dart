@@ -152,17 +152,17 @@ class _ButtonpageState extends State<ButtonContent> {
                             builder: (_) {
                               return AlertDialog(
                                 backgroundColor:
-                                    Color.fromARGB(255, 250, 182, 127),
+                                    Color.fromARGB(255, 250, 201, 127),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(16.0),
                                 ),
-                                title: const Text("¿NECESITAS AYUDA?"),
+                                title: const Text("Aviso"),
                                 titleTextStyle: const TextStyle(
                                     color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
                                 content: const Text(
-                                    "CONFIRMA LA ALERTA PARA ENVIAR TU UBICACIÓN ACTUAL"),
+                                    "Botón de pánico recoge datos de la ubicación para facilitar el uso del aplicativo, aunque este se encuentre cerrado o no este en uso."),
                                 contentTextStyle: const TextStyle(
                                     color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 15,
@@ -197,7 +197,7 @@ class _ButtonpageState extends State<ButtonContent> {
                                           context);
                                     },
                                     child: const Text("Confirmar",
-                                        style: TextStyle(color: Colors.white)),
+                                        style: TextStyle(color: Color.fromARGB(255, 148, 87, 167))),
                                   ),
                                   TextButton(
                                       onPressed: () {
@@ -210,7 +210,7 @@ class _ButtonpageState extends State<ButtonContent> {
                                       },
                                       child: const Text("Cancelar",
                                           style:
-                                              TextStyle(color: Colors.white))),
+                                              TextStyle(color: Color.fromARGB(255, 163, 56, 56)))),
                                 ],
                               );
                             });

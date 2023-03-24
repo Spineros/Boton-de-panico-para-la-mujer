@@ -365,13 +365,13 @@ class _registerState extends State<Register> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
-                      title: const Text("PRIVACIDAD"),
+                      title: const Text("¿Permitir que el Botón de pánico guarde sus datos?."),
                       titleTextStyle: const TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                       content: const Text(
-                          "ACEPTAS LOS TERMINOS Y POLITICAS DE PRIVACIDAD"),
+                          "Recuerde que sus datos serán tratados según la política de tratamiento de datos y la ley 1581 de 2012, por el cual se dictan disposiciones generales para la protección de datos personales"),
                       contentTextStyle: const TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
                           fontSize: 15,
@@ -399,7 +399,7 @@ class _registerState extends State<Register> {
                               );
                             },
                             child: const Text("Aceptar",
-                                style: TextStyle(color: Colors.white))),
+                                style: TextStyle(color: Color.fromARGB(255, 148, 87, 167)))),
                         TextButton(
                             onPressed: () {
                               _launched = _launchInBrowser(toLaunch);
@@ -410,8 +410,8 @@ class _registerState extends State<Register> {
                                 context,
                               );
                             },
-                            child: const Text("ver políticas de privacidad",
-                                style: TextStyle(color: Colors.white))),
+                            child: const Text("ver términos",
+                                style: TextStyle(color: Color.fromARGB(255, 0, 157, 113)))),
                         TextButton(
                             onPressed: () {
                               Navigator.of(
@@ -422,7 +422,7 @@ class _registerState extends State<Register> {
                               );
                             },
                             child: const Text("Cancelar",
-                                style: TextStyle(color: Colors.white))),
+                                style: TextStyle(color: Color.fromARGB(255, 163, 56, 56)))),
                       ],
                     );
                   });
@@ -430,7 +430,7 @@ class _registerState extends State<Register> {
             style: ElevatedButton.styleFrom(
               fixedSize: const Size(400, 60),
               foregroundColor: const Color.fromARGB(255, 252, 219, 249),
-              backgroundColor: Color.fromARGB(255, 147, 83, 231),
+              backgroundColor: Color.fromARGB(255, 147, 112, 180),
               elevation: 0,
               textStyle:
                   const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
