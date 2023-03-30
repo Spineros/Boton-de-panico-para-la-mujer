@@ -85,6 +85,9 @@ class _TiposState extends State<Tipos> {
                           'assets/images/APPMUJERES/VIOLENCIA/PSICOLOGICA-08.png'),
                     ),
                   ),
+                  child: InkWell(
+                    onTap: (() => _psicologica(context)),
+                  ),
                 ),
                 Container(
                   width: 200,
@@ -97,13 +100,15 @@ class _TiposState extends State<Tipos> {
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 250, 182, 127),
                   ),
-                  child: Text(
-                    "\nVIOLENCIA PSICOLÓGICA",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 178, 112, 162),
+                  child: InkWell(
+                    onTap: (() => _psicologica(context)),
+                    child: Text("\nVIOLENCIA PSICOLÓGICA",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 178, 112, 162),
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.left,
                   ),
                 ),
               ],
@@ -127,6 +132,9 @@ class _TiposState extends State<Tipos> {
                           'assets/images/APPMUJERES/VIOLENCIA/FISICA-09.png'),
                     ),
                   ),
+                  child: InkWell(
+                    onTap: (() => _fisica(context)),
+                  ),
                 ),
                 Container(
                   width: 200,
@@ -139,13 +147,15 @@ class _TiposState extends State<Tipos> {
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 250, 182, 127),
                   ),
-                  child: Text(
-                    "\n\nVIOLENCIA FÍSICA",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 178, 112, 162),
+                  child: InkWell(
+                    onTap: (() => _fisica(context)),
+                    child: Text("\nVIOLENCIA FÍSICA",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 178, 112, 162),
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.left,
                   ),
                 ),
               ],
@@ -169,6 +179,9 @@ class _TiposState extends State<Tipos> {
                           'assets/images/APPMUJERES/VIOLENCIA/SEXUAL-10.png'),
                     ),
                   ),
+                  child: InkWell(
+                    onTap: (() => _sexual(context)),
+                  ),
                 ),
                 Container(
                   width: 200,
@@ -181,13 +194,16 @@ class _TiposState extends State<Tipos> {
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 250, 182, 127),
                   ),
-                  child: Text(
-                    "\n\nVIOLENCIA SEXUAL",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 178, 112, 162),
+                  child: InkWell(
+                    onTap: (() => _sexual(context)),
+                    child: Text(
+                      "\nVIOLENCIA SEXUAL",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 178, 112, 162),
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.left,
                   ),
                 ),
               ],
@@ -211,6 +227,9 @@ class _TiposState extends State<Tipos> {
                           'assets/images/APPMUJERES/VIOLENCIA/ECONOMICA-11.png'),
                     ),
                   ),
+                  child: InkWell(
+                    onTap: (() => _economica(context)),
+                  ),
                 ),
                 Container(
                   width: 200,
@@ -223,13 +242,16 @@ class _TiposState extends State<Tipos> {
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 250, 182, 127),
                   ),
-                  child: Text(
-                    "\nVIOLENCIA ECONÓMICA Y/O PARTRIMONIAL",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 178, 112, 162),
+                  child: InkWell(
+                    onTap: (() => _economica(context)),
+                    child: Text(
+                      "\nVIOLENCIA ECONÓMICA Y/O PATRIMONIAL",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 178, 112, 162),
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.left,
                   ),
                 ),
               ],
@@ -253,6 +275,9 @@ class _TiposState extends State<Tipos> {
                           'assets/images/APPMUJERES/VIOLENCIA/SIMBOLICA-12.png'),
                     ),
                   ),
+                  child: InkWell(
+                    onTap: (() => _simbolica(context)),
+                  ),
                 ),
                 Container(
                   width: 200,
@@ -265,13 +290,16 @@ class _TiposState extends State<Tipos> {
                   decoration: BoxDecoration(
                     color: Color.fromARGB(255, 250, 182, 127),
                   ),
-                  child: Text(
-                    "\nVIOLENCIA SIMBÓLICA",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Color.fromARGB(255, 178, 112, 162),
+                  child: InkWell(
+                    onTap: (() => _simbolica(context)),
+                    child: Text(
+                      "\nVIOLENCIA SIMBÓLICA",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Color.fromARGB(255, 178, 112, 162),
+                      ),
+                      textAlign: TextAlign.left,
                     ),
-                    textAlign: TextAlign.left,
                   ),
                 ),
               ],
@@ -280,5 +308,183 @@ class _TiposState extends State<Tipos> {
         ),
       ),
     );
+  }
+
+  Future<void> _psicologica(BuildContext context) {
+    return showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            backgroundColor:Color.fromARGB(255, 250, 201, 127),
+            title: const Text('VIOLENCIA PSICOLÓGICA'),
+            titleTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+            content: const Text(
+                'es una grave forma de agresión que no utiliza el contacto físico pero\n'
+                'puede dejar graves secuelas en la psique de la víctima ya que es\n'
+                'una modalidad muy efectiva de ejercer poder sobre otro.\n'
+                'EJEMPLOS\n'
+                'Amenaza, Chantaje, Humillación, Insultos, Control'),
+                contentTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+            actions: <Widget>[
+              TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: Theme.of(context).textTheme.labelLarge,
+                ),
+                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 148, 87, 167))),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        });
+  }
+
+  Future<void> _fisica(BuildContext context) {
+    return showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            backgroundColor:Color.fromARGB(255, 250, 201, 127),
+            title: const Text('VIOLENCIA FÍSICA'),
+            titleTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+            content: const Text(
+                'es la forma de violencia que atañe al cuerpo y a la fuerza física:\n'
+                'el castigo corporal, capaz de ocasionar dolor o incluso la muerte,\n'
+                'así como sentimientos traumáticos y de humillación.\n'
+                'EJEMPLOS\n'
+                'Golpizas, Disparos, Violaciones, Castigos físicos que infringen dolor'),
+                contentTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+            actions: <Widget>[
+              TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: Theme.of(context).textTheme.labelLarge,
+                ),
+                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 148, 87, 167))),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        });
+  }
+
+  Future<void> _sexual(BuildContext context) {
+    return showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            backgroundColor:Color.fromARGB(255, 250, 201, 127),
+            title: const Text('VIOLENCIA SEXUAL'),
+            titleTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+            content: const Text(
+                'es cualquier actividad o contacto sexual que ocurre sin su\n'
+                'consentimiento. Puede involucrar fuerza física o amenaza\n'
+                'de fuerza. También puede ocurrir debido a coerción o amenazas.\n'
+                'EJEMPLOS\n'
+                'Violación, Esclavitud sexual, Prostitución forzada, Embarazo forzado, Esterilización forzada'),
+                contentTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+            actions: <Widget>[
+              TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: Theme.of(context).textTheme.labelLarge,
+                ),
+                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 148, 87, 167))),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        });
+  }
+
+  Future<void> _economica(BuildContext context) {
+    return showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            backgroundColor:Color.fromARGB(255, 250, 201, 127),
+            title: const Text('VIOLENCIA ECONOMICA y PATRIMONIO'),
+            titleTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+            content: const Text(
+                'se manifiesta a través de la limitación de recursos económicos,\n'
+                'del acceso al mercado laboral formal, de la toma de decisiones,\n'
+                'del control de los ingresos, y de la privación de las pensiones\n'
+                'alimenticias para los hijos.\n'),
+                contentTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+            actions: <Widget>[
+              TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: Theme.of(context).textTheme.labelLarge,
+                ),
+                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 148, 87, 167))),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        });
+  }
+
+  Future<void> _simbolica(BuildContext context) {
+    return showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            backgroundColor:Color.fromARGB(255, 250, 201, 127),
+            title: const Text('VIOLENCIA SIMBOLICA'),
+            titleTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+            content: const Text(
+                'La que a través de patrones estereotipados, mensajes, valores,\n'
+                'íconos o signos, transmita y reproduzca dominación, desigualdad\n'
+                'y dis- criminación en las relaciones sociales, naturalizando la \n'
+                'subordinación de la mujer en la sociedad.\n'),
+                contentTextStyle: const TextStyle(
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+            actions: <Widget>[
+              TextButton(
+                style: TextButton.styleFrom(
+                  textStyle: Theme.of(context).textTheme.labelLarge,
+                ),
+                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 148, 87, 167))),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        });
   }
 }

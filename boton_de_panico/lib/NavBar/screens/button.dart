@@ -22,6 +22,7 @@ class _ButtonpageState extends State<ButtonContent> {
   User? user;
   bool loading = true;
   var user_id;
+  var user_name;
   void getUser() async {
     ApiResponse response = await getUserDetail();
     if (response.error == null) {
@@ -29,6 +30,7 @@ class _ButtonpageState extends State<ButtonContent> {
         user = response.data as User;
         loading = false;
         user_id = user?.id;
+        user_name = user?.name;
       });
     } else if (response.error == unauthorized) {
       logout().then((value) => {
@@ -179,7 +181,7 @@ class _ButtonpageState extends State<ButtonContent> {
                                       Position position =
                                           await _getGeoLocationPosition();
                                       location =
-                                          'Lat: ${position.latitude} , Long: ${position.longitude}';
+                                          '${position.latitude},${position.longitude}';
                                       List<Placemark> placemarks =
                                           await placemarkFromCoordinates(
                                               position.latitude,
@@ -187,17 +189,20 @@ class _ButtonpageState extends State<ButtonContent> {
                                       print(placemarks);
                                       Placemark place = placemarks[0];
                                       Address =
-                                          '${place.street}, ${place.subLocality}, ${place.locality}, ${place.postalCode}, ${place.country}';
+                                          '${place.subAdministrativeArea}, ${place.administrativeArea}, ${place.street}, ${place.locality}, ${place.name}, ${place.thoroughfare}, ${place.subThoroughfare}';
                                       setState(() {});
                                       // ignore: use_build_context_synchronously
                                       PostProvider().registro(
                                           Address.toString(),
                                           location,
                                           user_id,
+                                          user_name,
                                           context);
                                     },
                                     child: const Text("Confirmar",
-                                        style: TextStyle(color: Color.fromARGB(255, 148, 87, 167))),
+                                        style: TextStyle(
+                                            color: Color.fromARGB(
+                                                255, 148, 87, 167))),
                                   ),
                                   TextButton(
                                       onPressed: () {
@@ -209,8 +214,9 @@ class _ButtonpageState extends State<ButtonContent> {
                                         );
                                       },
                                       child: const Text("Cancelar",
-                                          style:
-                                              TextStyle(color: Color.fromARGB(255, 163, 56, 56)))),
+                                          style: TextStyle(
+                                              color: Color.fromARGB(
+                                                  255, 163, 56, 56)))),
                                 ],
                               );
                             });
@@ -238,15 +244,36 @@ class _ButtonpageState extends State<ButtonContent> {
                       color: Color.fromARGB(255, 250, 182, 127),
                       child: CarouselSlider(
                         options: CarouselOptions(
-                          autoPlay: true,
+                          autoPlay: false,
                           aspectRatio: 0.8,
                           enlargeCenterPage: true,
                         ),
                         items: [
-                          Image.asset('assets/images/vio1.jpeg'),
-                          Image.asset('assets/images/vio2.jpeg'),
-                          Image.asset('assets/images/linea.jpg'),
-                        ],
+                          'assets/images/vio1.jpeg',
+                          'assets/images/vio2.jpeg',
+                          'assets/images/linea.jpg'
+                        ].map((i) {
+                          return Builder(
+                            builder: (BuildContext context) {
+                              return Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  margin: EdgeInsets.symmetric(horizontal: 5.0),
+                                  decoration:
+                                      BoxDecoration(color: Colors.amber),
+                                  child: GestureDetector(
+                                      child: Image.asset(i, fit: BoxFit.fill),
+                                      onTap: () {
+                                        Navigator.push<Widget>(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                ImageScreen(i),
+                                          ),
+                                        );
+                                      }));
+                            },
+                          );
+                        }).toList(),
                       ),
                     ),
                     SizedBox(
@@ -267,4 +294,18 @@ class _ButtonpageState extends State<ButtonContent> {
       ),
     );
   }
+}
+
+Widget ImageScreen(String url) {
+  return Dialog(
+    shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(32.0))),
+    child: Container(
+      height: 350,
+      decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage(url), fit: BoxFit.fill),
+          borderRadius: BorderRadius.circular(30)),
+    ),
+    insetAnimationCurve: Curves.decelerate,
+  );
 }

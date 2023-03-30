@@ -3,6 +3,7 @@ class Calendario {
   String descripcion;
   String direccion;
   String ruta;
+  String fecha;
   String multimedia;
 
   Calendario(
@@ -10,6 +11,7 @@ class Calendario {
     this.descripcion,
     this.direccion,
     this.ruta,
+    this.fecha,
     this.multimedia,
   );
 

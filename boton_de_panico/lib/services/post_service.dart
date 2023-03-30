@@ -12,14 +12,16 @@ class PostProvider with ChangeNotifier {
   static var ads;
   static var _location;
   static var _user_id;
+  static var _user_name;
   SharedPreferences? prefs;
 
-  registro(String Address, location, user_id, context) async {
+  registro(String Address, location, user_id, user_name, context) async {
     prefs = await SharedPreferences.getInstance();
     Map data2 = {
       'address': Address,
       'location': location,
       'user_id': user_id,
+      'user_name': user_name,
     };
     print(data2);
     _address = Address;
@@ -40,12 +42,14 @@ class PostProvider with ChangeNotifier {
     prefs!.setString('address', Address);
     prefs!.setString('location', location);
     prefs!.setString('user_id', user_id.toString());
+    prefs!.setString('user_name', user_name.toString());
 
     ads = prefs!.getString('address');
     _location = prefs!.getString('location');
     _user_id = prefs!.getString('user_id');
+    _user_name = prefs!.getString('user_name');
 
-    print(ads + _location + _user_id);
+    print(ads + _location + _user_id + _user_name);
 
     print(response.body);
     print(response.statusCode);

@@ -135,10 +135,23 @@ class _EventosState extends State<Eventos> {
                     linkColor: Color.fromARGB(255, 243, 135, 33),
                     style: const TextStyle(
                         color: Color.fromARGB(255, 85, 40, 122),
-                        fontWeight: FontWeight.bold, fontSize: 15),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15),
                   ),
                 ),
-
+                Expanded(
+                  child: ExpandableText(
+                    element.fecha.toUpperCase(),
+                    expandText: 'Ver más',
+                    collapseText: 'Ver menos',
+                    maxLines: 2,
+                    linkColor: Color.fromARGB(255, 243, 135, 33),
+                    style: const TextStyle(
+                        color: Color.fromARGB(255, 85, 40, 122),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15),
+                  ),
+                ),
                 // Text(
                 //   element.title,
                 //   style: const TextStyle(
@@ -156,8 +169,15 @@ class _EventosState extends State<Eventos> {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
-                        Icon(Icons.navigation_rounded,color: Color.fromARGB(255, 67, 211, 115),),
-                        Text('Ir al evento',style: TextStyle(color: Color.fromARGB(255, 67, 211, 115)),)
+                        Icon(
+                          Icons.navigation_rounded,
+                          color: Color.fromARGB(255, 67, 211, 115),
+                        ),
+                        Text(
+                          'Ir al evento',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 67, 211, 115)),
+                        )
                       ]),
                   onPressed: () {
                     Navigator.push(
