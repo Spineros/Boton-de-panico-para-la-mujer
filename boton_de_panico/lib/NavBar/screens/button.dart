@@ -244,7 +244,7 @@ class _ButtonpageState extends State<ButtonContent> {
                       color: Color.fromARGB(255, 250, 182, 127),
                       child: CarouselSlider(
                         options: CarouselOptions(
-                          autoPlay: false,
+                          autoPlay: true,
                           aspectRatio: 0.8,
                           enlargeCenterPage: true,
                         ),

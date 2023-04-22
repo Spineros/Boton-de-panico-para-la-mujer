@@ -24,6 +24,8 @@ class _DatosState extends State<Datos> {
   TextEditingController user_documento = TextEditingController();
   TextEditingController user_sexo = TextEditingController();
   TextEditingController user_tipopoblacion = TextEditingController();
+  TextEditingController user_nombrefamiliar = TextEditingController();
+  TextEditingController user_telfamiliar = TextEditingController();
 
   // get user detail
   void getUser() async {
@@ -38,6 +40,8 @@ class _DatosState extends State<Datos> {
         user_documento.text = user!.documento ?? '';
         user_sexo.text = user!.sexo ?? '';
         user_tipopoblacion.text = user!.tipopoblacion ?? '';
+        user_nombrefamiliar.text = user!.nombrefamiliar ?? '';
+        user_telfamiliar.text = user!.telfamiliar ?? '';
       });
     } else if (response.error == unauthorized) {
       logout().then((value) => {
@@ -59,7 +63,9 @@ class _DatosState extends State<Datos> {
         user_tipodocumento.text,
         user_documento.text,
         user_sexo.text,
-        user_tipopoblacion.text);
+        user_tipopoblacion.text,
+        user_nombrefamiliar.text,
+        user_telfamiliar.text);
     setState(() {
       loading = false;
     });
@@ -181,6 +187,22 @@ class _DatosState extends State<Datos> {
                   TextFormField(
                     decoration: kInputDecoration('Población vulnerable'),
                     controller: user_tipopoblacion,
+                    validator: (val) => val!.isEmpty ? 'ERROR' : null,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    decoration: kInputDecoration('Nombre familiar'),
+                    controller: user_nombrefamiliar,
+                    validator: (val) => val!.isEmpty ? 'ERROR' : null,
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    decoration: kInputDecoration('Telefono familiar'),
+                    controller: user_telfamiliar,
                     validator: (val) => val!.isEmpty ? 'ERROR' : null,
                   ),
                 ],

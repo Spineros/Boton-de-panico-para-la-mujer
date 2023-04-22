@@ -21,10 +21,12 @@ class AuthProvider with ChangeNotifier {
   static var _tipopoblacion;
   static var _password;
   static var _confirmpassword;
+  static var _nombrefamiliar;
+  static var _telfamiliar;
   SharedPreferences? prefs;
 
   register(String name, email, phoneNumber, tipodocumento, documento, sexo,
-      tipopoblacion, password, confirmpassword, countryCode, context) async {
+      tipopoblacion, password, confirmpassword, countryCode, nombrefamiliar, telfamiliar, context) async {
     prefs = await SharedPreferences.getInstance();
     Map data1 = {
       'name': name,
@@ -36,7 +38,9 @@ class AuthProvider with ChangeNotifier {
       'tipopoblacion': tipopoblacion,
       'password': password,
       'confirmpassword': confirmpassword,
-      'countryCode': 'BD'
+      'countryCode': 'BD',
+      'nombrefamiliar':nombrefamiliar,
+      'telfamiliar': telfamiliar,
     };
     print(data1);
     _name = name;
@@ -63,6 +67,8 @@ class AuthProvider with ChangeNotifier {
     prefs!.setString('tipopoblacion', tipopoblacion);
     prefs!.setString('password', password);
     prefs!.setString('confirmpassword', confirmpassword);
+    prefs!.setString('nombrefamiliar', nombrefamiliar);
+    prefs!.setString('telfamiliar', telfamiliar);
 
     nm = prefs!.getString('name');
     _email = prefs!.getString('email');
@@ -73,6 +79,8 @@ class AuthProvider with ChangeNotifier {
     _tipopoblacion = prefs!.getString('tipopoblacion');
     _password = prefs!.getString('password');
     _confirmpassword = prefs!.getString('confirmpassword');
+    _nombrefamiliar = prefs!.getString('nombrefamiliar');
+    _telfamiliar = prefs!.getString('telfamiliar');
 
     print(nm +
         _email +

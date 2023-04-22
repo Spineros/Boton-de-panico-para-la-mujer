@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.boton_de_panico">
    <application
-        android:label="botón de pánico"
+        android:label="Botón de pánico"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

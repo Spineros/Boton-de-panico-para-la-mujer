@@ -23,6 +23,8 @@ class _registerState extends State<Register> {
   final TextEditingController password = new TextEditingController();
   final TextEditingController confirmpassword = new TextEditingController();
   final TextEditingController countryCode = new TextEditingController();
+  final TextEditingController nombrefamiliar =  TextEditingController();
+  final TextEditingController telfamiliar =  TextEditingController();
   var updatedPhone;
 
   final Uri toLaunch = Uri.parse(
@@ -331,6 +333,72 @@ class _registerState extends State<Register> {
     );
   }
 
+  Widget _entrynomfamField(String title, {bool isPassword = false}) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            title,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+          ),
+          SizedBox(
+            height: 1,
+          ),
+          //name textfield
+          Container(
+            child: TextField(
+              controller: nombrefamiliar,
+              obscureText: isPassword,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  fillColor: Color.fromARGB(255, 173, 130, 184),
+                  filled: true),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _entrytelfamField(String title, {bool isPassword = false}) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            title,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+          ),
+          SizedBox(
+            height: 1,
+          ),
+          //name textfield
+          Container(
+              child: IntlPhoneField(
+            controller: telfamiliar,
+            decoration: InputDecoration(
+              //decoration for Input Field
+              border: OutlineInputBorder(
+                borderSide: BorderSide(),
+              ),
+            ),
+            initialCountryCode: 'CO', //default contry code, BD for Bangladesh
+            onChanged: (phone) {
+              updatedPhone = phone.completeNumber.replaceAll('+', '');
+              //when phone number country code is changed
+              print(phone.completeNumber); //get complete number
+              print(phone.countryCode); // get country code only
+              print(phone.number); // only phone number
+            },
+          )),
+        ],
+      ),
+    );
+  }
+
   Widget _submitButton() {
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -390,6 +458,8 @@ class _registerState extends State<Register> {
                                   password.text,
                                   confirmpassword.text,
                                   'BD',
+                                  nombrefamiliar.text.toString(),
+                                  telfamiliar.text.toString(),
                                   context);
                               Navigator.of(
                                 context,
@@ -479,6 +549,28 @@ class _registerState extends State<Register> {
           _entrytipopoblacionField("Población vulnerable"),
           _entryPasswordField("Contraseña", isPassword: true),
           _entryConfirmPasswordField("Confirmar contraseña", isPassword: true),
+          Container(
+                  width: 270,
+                  height: 80,
+                  margin: const EdgeInsets.only(
+                    left: 0,
+                    right: 0,
+                    top: 0,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 178, 112, 162),
+                  ),
+                  child: Text(
+                    "NOTA: Por favor ingresar el nombre y telefono de una persona de confianza",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 255, 255, 255),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+          _entrynomfamField("Nombre familiar"),
+          _entrytelfamField("Telefono familiar"),
         ],
       ),
     );

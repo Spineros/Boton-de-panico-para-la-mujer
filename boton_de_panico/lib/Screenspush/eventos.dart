@@ -117,7 +117,7 @@ class _EventosState extends State<Eventos> {
 
     data.forEach((element) {
       //VALIDACION QUE RED SOCIAL ES
-
+String estados = element.estado;
       listItems.add(Column(
         children: [
           //cafe name
@@ -192,7 +192,7 @@ class _EventosState extends State<Eventos> {
           ),
 
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(15.0),
             child: SizedBox(
               child: Card(
                   elevation: 15,
@@ -207,7 +207,7 @@ class _EventosState extends State<Eventos> {
                         image: DecorationImage(
                           image: CachedNetworkImageProvider(
                               eventosURL + element.multimedia,
-                              scale: 0.5),
+                              scale: 0.5),fit: BoxFit.fill
                         ),
                       ),
                     ),
@@ -220,7 +220,28 @@ class _EventosState extends State<Eventos> {
           const Divider(
             color: Color.fromARGB(255, 67, 211, 115),
           ),
-
+            Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: SizedBox(
+              child: Card(
+                  color: Color.fromARGB(255, 250, 182, 127),
+                  elevation: 15,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10), // if you need this
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: ExpandableText(
+                      'Evento $estados',
+                      expandText: 'Ver más',
+                      collapseText: 'Ver menos',
+                      maxLines: 10,
+                      linkColor: Color.fromARGB(255, 60, 202, 103),
+                      textAlign: TextAlign.justify,
+                    ),
+                  )),
+            ),
+          ),
           Text('Descripción del Evento'.toUpperCase(),
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13.0)),
 

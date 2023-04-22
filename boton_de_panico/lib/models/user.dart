@@ -9,6 +9,8 @@ class RegistrationApiResponse {
     required this.sexo,
     required this.tipopoblacion,
     required this.password,
+    required this.nombrefamiliar,
+    required this.telfamiliar,
     required this.userData,
   });
 
@@ -21,6 +23,8 @@ class RegistrationApiResponse {
   String sexo;
   String tipopoblacion;
   String password;
+  String nombrefamiliar;
+  String telfamiliar;
   //UserData userData;
   User? userData;
 
@@ -35,6 +39,8 @@ class RegistrationApiResponse {
         sexo: json["sexo"],
         tipopoblacion: json["tipopoblacion"],
         password: json["password"],
+        nombrefamiliar: json["nombrefamiliar"],
+        telfamiliar: json["telfamiliar"],
         userData: json["UserData"] == null
             ? null
             : User.fromJson(json["UserData"] as Map<String, dynamic>),
@@ -50,6 +56,8 @@ class User {
   String? documento;
   String? sexo;
   String? tipopoblacion;
+  String? nombrefamiliar;
+  String? telfamiliar;
   String? password;
   String? token;
 
@@ -62,6 +70,8 @@ class User {
       this.documento,
       this.sexo,
       this.tipopoblacion,
+      this.nombrefamiliar,
+      this.telfamiliar,
       this.password,
       this.token});
 
@@ -76,6 +86,8 @@ class User {
         documento: json['user']['documento'],
         sexo: json['user']['sexo'],
         tipopoblacion: json['user']['tipopoblacion'],
+        nombrefamiliar: json['user']['nombrefamiliar'],
+        telfamiliar: json['user']['telfamiliar'],
         password: json['user']['password'],
         token: json['token']);
   }

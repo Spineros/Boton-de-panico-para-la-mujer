@@ -40,7 +40,7 @@ Future<ApiResponse> login(String email, String password) async {
 
 // Register
 Future<ApiResponse> register(String name, email, phoneNumber, tipodocumento,
-    documento, sexo, tipopoblacion, password, confirmpassword) async {
+    documento, sexo, tipopoblacion, nombrefamiliar, telfamiliar, password, confirmpassword) async {
   ApiResponse apiResponse = ApiResponse();
   try {
     final response = await http.post(Uri.parse(registerURL), headers: {
@@ -53,6 +53,8 @@ Future<ApiResponse> register(String name, email, phoneNumber, tipodocumento,
       'documento': documento,
       'sexo': sexo,
       'tipopoblacion': tipopoblacion,
+      'nombrefamiliar': nombrefamiliar,
+      'telfamiliar': telfamiliar,
       'password': password,
       'password_confirmation': confirmpassword
     });
@@ -64,6 +66,8 @@ Future<ApiResponse> register(String name, email, phoneNumber, tipodocumento,
         documento +
         sexo +
         tipopoblacion +
+        nombrefamiliar +
+        telfamiliar +
         password +
         confirmpassword);
 
@@ -119,7 +123,9 @@ Future<ApiResponse> updateUser(
     String tipodocumento,
     String documento,
     String sexo,
-    String tipopoblacion) async {
+    String tipopoblacion,
+    String nombrefamiliar,
+    String telfamiliar) async {
   ApiResponse apiResponse = ApiResponse();
   try {
     String token = await getToken();
@@ -138,7 +144,9 @@ Future<ApiResponse> updateUser(
                 'tipodocumento': tipodocumento,
                 'documento': documento,
                 'sexo': sexo,
-                'tipopoblacion': tipopoblacion
+                'tipopoblacion': tipopoblacion,
+                'nombrefamiliar': nombrefamiliar,
+                'telfamiliar': telfamiliar,
               });
     // user can update his/her name or name and image
 

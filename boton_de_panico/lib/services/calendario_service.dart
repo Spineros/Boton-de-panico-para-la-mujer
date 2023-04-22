@@ -26,6 +26,7 @@ class ConnectionCalendario {
             item['calendario']['direccion'],
             item['calendario']['ruta'],
             item['calendario']['fecha'],
+            item['calendario']['estado'],
             item['calendario']['multimedia']));
       }
 
