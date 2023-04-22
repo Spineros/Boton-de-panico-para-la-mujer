@@ -144,10 +144,10 @@ class _ButtonpageState extends State<ButtonContent> {
                           fontWeight: FontWeight.w500),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 30,
                     ),
                     ElevatedButton(
-                      child: const Text('AYUDA!!!!'),
+                      child: const Text('¡AYUDA!'),
                       onPressed: () async {
                         showDialog(
                             context: context,
@@ -236,12 +236,12 @@ class _ButtonpageState extends State<ButtonContent> {
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 40,
                     ),
                     Container(
                       width: 250,
                       height: 250,
-                      color: Color.fromARGB(255, 250, 182, 127),
+                      color: Color.fromARGB(255, 241, 205, 255),
                       child: CarouselSlider(
                         options: CarouselOptions(
                           autoPlay: true,
@@ -249,9 +249,8 @@ class _ButtonpageState extends State<ButtonContent> {
                           enlargeCenterPage: true,
                         ),
                         items: [
-                          'assets/images/vio1.jpeg',
-                          'assets/images/vio2.jpeg',
-                          'assets/images/linea.jpg'
+                          'assets/images/VIOLENTÓMETRO.png',
+                          'assets/images/linea-de-atencion-a-mujeres.png'
                         ].map((i) {
                           return Builder(
                             builder: (BuildContext context) {

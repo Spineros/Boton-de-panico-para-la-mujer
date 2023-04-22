@@ -315,16 +315,18 @@ class _TiposState extends State<Tipos> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            backgroundColor:Color.fromARGB(255, 101, 42, 116),
+            backgroundColor:Color.fromARGB(255, 122, 68, 149),
             title: const Text('VIOLENCIA PSICOLÓGICA'),
             titleTextStyle: const TextStyle(
                                     color: Color.fromARGB(255, 97, 201, 132),
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
             content: const Text(
-                'es una grave forma de agresión que no utiliza el contacto físico pero puede dejar graves secuelas en la psique de la víctima ya que es una modalidad muy efectiva de ejercer poder sobre otro.\n'
+                'Es una forma grave de agresión que no utiliza el contacto físico pero puede dejar graves secuelas en la psique de la víctima ya que es una modalidad muy efectiva de ejercer poder sobre otro.\n'
                 'EJEMPLOS\n'
-                'Amenaza, Chantaje, Humillación, Insultos, Control'),
+                'Amenaza, Chantaje, Humillación, Insultos, Control\n'
+                '\n'
+                'Si eres víctima de ésta violencia en el entorno familiar asiste a la Comisaría de Familia - Calle 18 No. 11-116 Edificio Copacabana, Barrio Balmoral, Fusagasugá.'),
                 contentTextStyle: const TextStyle(
                                     color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 13,
@@ -334,7 +336,7 @@ class _TiposState extends State<Tipos> {
                 style: TextButton.styleFrom(
                   textStyle: Theme.of(context).textTheme.labelLarge,
                 ),
-                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 255, 0, 0))),
+                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 104, 182, 134))),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -349,16 +351,18 @@ class _TiposState extends State<Tipos> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            backgroundColor:Color.fromARGB(255, 101, 42, 116),
+            backgroundColor:Color.fromARGB(255, 122, 68, 149),
             title: const Text('VIOLENCIA FÍSICA'),
             titleTextStyle: const TextStyle(
                                     color: Color.fromARGB(255, 97, 201, 132),
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
             content: const Text(
-                'es la forma de violencia que atañe al cuerpo y a la fuerza física: el castigo corporal, capaz de ocasionar dolor o incluso la muerte, así como sentimientos traumáticos y de humillación.\n'
+                'Es la forma de violencia que atañe al cuerpo y a la fuerza física; el castigo corporal, capaz de ocasionar dolor o incluso la muerte, así como sentimientos traumáticos y de humillación.\n'
                 'EJEMPLOS\n'
-                'Golpizas, Disparos, Violaciones, Castigos físicos que infringen dolor'),
+                'Golpizas, Disparos, Violaciones, Castigos físicos que infringen dolor\n'
+                '\n'
+                'Si eres víctima de ésta violencia asiste lo más pronto posible a la Clínica Belén (Transversal 12 # 17-01) o el Hospital San Rafael de Fusagasugá (Diagonal 23 12 – 64)'),
                 contentTextStyle: const TextStyle(
                                     color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 13,
@@ -368,7 +372,7 @@ class _TiposState extends State<Tipos> {
                 style: TextButton.styleFrom(
                   textStyle: Theme.of(context).textTheme.labelLarge,
                 ),
-                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 255, 0, 0))),
+                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 104, 182, 134))),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -383,16 +387,18 @@ class _TiposState extends State<Tipos> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            backgroundColor:Color.fromARGB(255, 101, 42, 116),
+            backgroundColor:Color.fromARGB(255, 122, 68, 149),
             title: const Text('VIOLENCIA SEXUAL'),
             titleTextStyle: const TextStyle(
                                     color: Color.fromARGB(255, 97, 201, 132),
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
             content: const Text(
-                'es cualquier actividad o contacto sexual que ocurre sin su consentimiento. Puede involucrar fuerza física o amenaza de fuerza. También puede ocurrir debido a coerción o amenazas.\n'
+                'Es cualquier actividad o contacto sexual que ocurre sin su consentimiento. Puede involucrar fuerza física o amenaza de fuerza. También puede ocurrir debido a coerción o amenazas.\n'
                 'EJEMPLOS\n'
-                'Violación, Esclavitud sexual, Prostitución forzada, Embarazo forzado, Esterilización forzada'),
+                'Violación, Esclavitud sexual, Prostitución forzada, Embarazo forzado, Esterilización forzada\n'
+                '\n'
+                'Si eres víctima de ésta violencia asiste lo más pronto posible a la Clínica Belén (Transversal 12 # 17-01) o el Hospital San Rafael de Fusagasugá (Diagonal 23 12 – 64)'),
                 contentTextStyle: const TextStyle(
                                     color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 13,
@@ -402,7 +408,7 @@ class _TiposState extends State<Tipos> {
                 style: TextButton.styleFrom(
                   textStyle: Theme.of(context).textTheme.labelLarge,
                 ),
-                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 255, 0, 0))),
+                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 104, 182, 134))),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -417,14 +423,18 @@ class _TiposState extends State<Tipos> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            backgroundColor:Color.fromARGB(255, 101, 42, 116),
+            backgroundColor:Color.fromARGB(255, 122, 68, 149),
             title: const Text('VIOLENCIA ECONOMICA y PATRIMONIO'),
             titleTextStyle: const TextStyle(
                                     color: Color.fromARGB(255, 97, 201, 132),
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold),
             content: const Text(
-                'se manifiesta a través de la limitación de recursos económicos, del acceso al mercado laboral formal, de la toma de decisiones, del control de los ingresos, y de la privación de las pensiones alimenticias para los hijos.\n'),
+                'Se manifiesta a través de la limitación de recursos económicos, del acceso al mercado laboral formal, de la toma de decisiones, del control de los ingresos, y de la privación de las pensiones alimenticias para los hijos.\n'
+                '\n'
+                'Si eres víctima de ésta violencia en el entorno familiar asiste a la Comisaría de Familia - Calle 18 No. 11-116 Edificio Copacabana, Barrio Balmoral, Fusagasugá.\n'
+                '\n'
+                'Si NO es en el contexto intrafamiliar recuerda asistir a Fiscalía (Diagonal 16 #12-2) Fusagasugá'),
                 contentTextStyle: const TextStyle(
                                     color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 13,
@@ -434,7 +444,7 @@ class _TiposState extends State<Tipos> {
                 style: TextButton.styleFrom(
                   textStyle: Theme.of(context).textTheme.labelLarge,
                 ),
-                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 255, 0, 0))),
+                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 104, 182, 134))),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
@@ -449,7 +459,7 @@ class _TiposState extends State<Tipos> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            backgroundColor:Color.fromARGB(255, 101, 42, 116),
+            backgroundColor:Color.fromARGB(255, 122, 68, 149),
             title: const Text('VIOLENCIA SIMBOLICA'),
             titleTextStyle: const TextStyle(
                                     color: Color.fromARGB(255, 97, 201, 132),
@@ -466,7 +476,7 @@ class _TiposState extends State<Tipos> {
                 style: TextButton.styleFrom(
                   textStyle: Theme.of(context).textTheme.labelLarge,
                 ),
-                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 255, 0, 0))),
+                child: const Text('CERRAR', style: TextStyle(color: Color.fromARGB(255, 104, 182, 134))),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },

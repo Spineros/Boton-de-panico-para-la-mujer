@@ -1,3 +1,4 @@
+import 'package:boton_de_panico/Screenspush/casa.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
@@ -164,6 +165,37 @@ class _HomepageState extends State<HomeContent> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const Eventos()),
+                  );
+                },
+                child: Image.asset('assets/images/APPMUJERES/EVENTOS-14.png'),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text("Casa de las Mujeres Empoderadas",
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Color.fromARGB(255, 176, 30, 233),
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: const EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 10,
+              ),
+              color: Color.fromARGB(255, 250, 182, 127),
+              width: 200,
+              height: 150,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Casa()),
                   );
                 },
                 child: Image.asset('assets/images/APPMUJERES/EVENTOS-14.png'),
