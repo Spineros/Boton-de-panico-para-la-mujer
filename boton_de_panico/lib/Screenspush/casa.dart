@@ -44,7 +44,7 @@ class _CasaState extends State<Casa> {
         elevation: 0.0,
         toolbarHeight: 80,
         title: const Text(
-          "Casa",
+          "Casa de la mujer",
           style: TextStyle(
               color: Color.fromARGB(255, 122, 68, 149),
               fontSize: 25,
@@ -74,28 +74,105 @@ class _CasaState extends State<Casa> {
           children: [
             Column(
               children: [
+                TextButton(
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: const [
+                        Icon(
+                          Icons.navigation_rounded,
+                          color: Color.fromARGB(255, 67, 211, 115),
+                        ),
+                        Text(
+                          'Ir a la casa de la mujer',
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 67, 211, 115)),
+                        )
+                      ]),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => RouteC(
+                                linkRuta:
+                                    'https://www.google.com/maps/place/Casa+de+la+Mujer/@4.352679,-74.3591349,18.76z/data=!4m6!3m5!1s0x8e3f05762da4155b:0x5fb1219ca43e3d23!8m2!3d4.3525482!4d-74.3585449!16s%2Fg%2F11t4cbrzh3?hl=es-ES'))));
+                  },
+                ),
                 Padding(
-                    padding: EdgeInsets.only(top: 10),
-                    child: FutureBuilder(
-                      future: ConnectionCalendario().getCalendario(),
-                      builder: (context,
-                          AsyncSnapshot<List<Calendario>> asyncSnapshot) {
-                        if (asyncSnapshot.hasData) {
-                          return Column(
-                              children:
-                                  listItems(asyncSnapshot.data!, context));
-                        } else {
-                          return const Center(
-                            child: Text('No se logró cargar la información'),
-                          );
-                        }
-                        return Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      },
-                    )),
-                SizedBox(
-                  height: 0,
+                  padding: const EdgeInsets.all(15.0),
+                  child: SizedBox(
+                    child: Card(
+                        color: Color.fromARGB(255, 250, 182, 127),
+                        elevation: 15,
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(10), // if you need this
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Container(
+                            height: 300,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('assets/images/casa.jpg'),
+                                  fit: BoxFit.fill),
+                            ),
+                          ),
+                        )),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: SizedBox(
+                    child: Card(
+                        color: Color.fromARGB(255, 255, 244, 229),
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(10), // if you need this
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: ExpandableText(
+                            'Casa de las Mujeres Empoderadas',
+                            style: TextStyle(
+                                fontSize: 25,
+                                color: Color.fromARGB(255, 176, 30, 233),
+                                fontWeight: FontWeight.bold),
+                            expandText: 'Ver más',
+                            collapseText: 'Ver menos',
+                            maxLines: 10,
+                            linkColor: Color.fromARGB(255, 60, 202, 103),
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: SizedBox(
+                    child: Card(
+                        color: Color.fromARGB(255, 250, 182, 127),
+                        elevation: 15,
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(10), // if you need this
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: ExpandableText(
+                            'La vivienda ubicada en la Calle 6 norte # 1-27 San Antonio será un lugar que permitirá fortalecer todos los procesos que se vienen desarrollando desde la secretaria de la Mujer y Género.',
+                            style: TextStyle(
+                                fontSize: 15,
+                                color: Color.fromARGB(255, 0, 0, 0),
+                                fontWeight: FontWeight.bold),
+                            expandText: 'Ver más',
+                            collapseText: 'Ver menos',
+                            maxLines: 10,
+                            linkColor: Color.fromARGB(255, 60, 202, 103),
+                            textAlign: TextAlign.justify,
+                          ),
+                        )),
+                  ),
                 ),
                 Container(
                     margin:
@@ -117,7 +194,7 @@ class _CasaState extends State<Casa> {
 
     data.forEach((element) {
       //VALIDACION QUE RED SOCIAL ES
-String estados = element.estado;
+      String estados = element.estado;
       listItems.add(Column(
         children: [
           //cafe name
@@ -183,8 +260,9 @@ String estados = element.estado;
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: ((context) =>
-                                RouteC(linkRuta: 'https://www.google.com/maps/place/Casa+de+la+Mujer/@4.352679,-74.3591349,18.76z/data=!4m6!3m5!1s0x8e3f05762da4155b:0x5fb1219ca43e3d23!8m2!3d4.3525482!4d-74.3585449!16s%2Fg%2F11t4cbrzh3?hl=es-ES'))));
+                            builder: ((context) => RouteC(
+                                linkRuta:
+                                    'https://www.google.com/maps/place/Casa+de+la+Mujer/@4.352679,-74.3591349,18.76z/data=!4m6!3m5!1s0x8e3f05762da4155b:0x5fb1219ca43e3d23!8m2!3d4.3525482!4d-74.3585449!16s%2Fg%2F11t4cbrzh3?hl=es-ES'))));
                   },
                 )
               ],
@@ -205,10 +283,10 @@ String estados = element.estado;
                       height: 300,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: CachedNetworkImageProvider(
-                              eventosURL + element.multimedia,
-                              scale: 0.5),fit: BoxFit.fill
-                        ),
+                            image: CachedNetworkImageProvider(
+                                eventosURL + element.multimedia,
+                                scale: 0.5),
+                            fit: BoxFit.fill),
                       ),
                     ),
                   )),
@@ -220,7 +298,7 @@ String estados = element.estado;
           const Divider(
             color: Color.fromARGB(255, 67, 211, 115),
           ),
-            Padding(
+          Padding(
             padding: const EdgeInsets.all(12.0),
             child: SizedBox(
               child: Card(

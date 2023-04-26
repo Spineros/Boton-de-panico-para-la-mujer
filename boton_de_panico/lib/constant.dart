@@ -1,16 +1,16 @@
 // ----- STRINGS ------
 import 'package:flutter/material.dart';
 
-const baseURL = 'http://192.168.20.21:8000/api';
-// const baseURL = 'http://192.168.20.21:8000/api';
+const baseURL = 'http://10.0.0.39:8000/api';
+// const baseURL = 'http://10.0.0.39:8000/api';
 const loginURL = baseURL + '/login';
 const registerURL = baseURL + '/register';
 const logoutURL = baseURL + '/logout';
 const userURL = baseURL + '/user';
 const postsURL = baseURL + '/registros';
 const calendarioURL = baseURL + '/show';
-const eventosURL = 'http://192.168.20.21:8000/storage/';
-const olvidoURL = 'http://192.168.20.21:8000/forgot-password';
+const eventosURL = 'http://10.0.0.39:8000/storage/';
+const olvidoURL = 'http://10.0.0.39:8000/forgot-password';
 
 // ----- Errors -----
 const serverError = 'Server error';

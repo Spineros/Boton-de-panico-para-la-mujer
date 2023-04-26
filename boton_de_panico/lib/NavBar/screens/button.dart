@@ -139,9 +139,9 @@ class _ButtonpageState extends State<ButtonContent> {
                     const Text(
                       'Utilizar solo en caso de emergencia',
                       style: TextStyle(
-                          color: Color.fromARGB(255, 178, 112, 162),
+                          color: Color.fromARGB(255, 103, 63, 196),
                           fontSize: 20,
-                          fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
                       height: 30,
@@ -235,6 +235,25 @@ class _ButtonpageState extends State<ButtonContent> {
                         ),
                       ),
                     ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    Container(
+                        margin: const EdgeInsets.only(
+                          left: 10,
+                          right: 10,
+                        ),
+                        color: Color.fromARGB(255, 250, 182, 127),
+                        width: 400,
+                        height: 75,
+                        child: Text(
+                          'El botón de pánico está directamente asociado a la Policía Nacional y sus cuadrantes de policía, quienes llegarán por georreferenciación al alugar dónde se esta el Riesgo de Feminicidio',
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                              color: Color.fromARGB(255, 97, 22, 78),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700),
+                        )),
                     const SizedBox(
                       height: 40,
                     ),

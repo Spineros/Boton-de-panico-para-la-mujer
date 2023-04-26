@@ -68,12 +68,44 @@ class _HomepageState extends State<HomeContent> {
               width: 100,
               height: 50,
               child: Text(
-                "Por una vida libre de violencias para niñas, mujers y adolecentes",
+                "Por una vida libre de violencias para niñas, mujeres y adolecentes",
                 style: TextStyle(
                   fontSize: 20,
-                  color: Color.fromARGB(255, 178, 112, 162),
+                  color: Color.fromARGB(255, 97, 22, 78),
+                  fontWeight: FontWeight.w700
                 ),
                 textAlign: TextAlign.center,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text("Casa de las Mujeres\n Empoderadas",
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Color.fromARGB(255, 176, 30, 233),
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              margin: const EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 10,
+              ),
+              color: Color.fromARGB(255, 250, 182, 127),
+              width: 200,
+              height: 150,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Casa()),
+                  );
+                },
+                child: Image.asset('assets/images/stitch.webp'),
               ),
             ),
             SizedBox(
@@ -165,37 +197,6 @@ class _HomepageState extends State<HomeContent> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const Eventos()),
-                  );
-                },
-                child: Image.asset('assets/images/APPMUJERES/EVENTOS-14.png'),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Text("Casa de las Mujeres Empoderadas",
-                style: TextStyle(
-                    fontSize: 25,
-                    color: Color.fromARGB(255, 176, 30, 233),
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              margin: const EdgeInsets.only(
-                left: 10,
-                right: 10,
-                top: 10,
-              ),
-              color: Color.fromARGB(255, 250, 182, 127),
-              width: 200,
-              height: 150,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Casa()),
                   );
                 },
                 child: Image.asset('assets/images/APPMUJERES/EVENTOS-14.png'),
